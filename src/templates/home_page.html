@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h5 class="alert alert-success text-center mt-3">Welcome, Select Your Venue for Booking...</h5>
-
+<div class="container">
+<h5 class="alert alert-success text-center mt-3">Welcome, Select Venue for Booking...</h5>
+<div class="row">
+    {% for v in venues %}
+<div class="card ml-3" style="width: 18rem;">
+    <img src="{{v.venue_image.url }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{v.name}}</h5>
+      <p class="card-text">{{v.address}}</p>
+      <a href="{% url 'detail-page' v.id%}" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
 {% endblock content %}
