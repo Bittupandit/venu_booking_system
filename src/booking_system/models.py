@@ -37,3 +37,13 @@ class BookingSystem(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+
+class Booking(models.Model):
+    name = models.ForeignKey(BookingSystem,on_delete=models.CASCADE,blank=True, null=True,verbose_name="Venue Name")
+    booking_person_name = models.CharField(max_length=200,blank=True, null=True,verbose_name="Person Name")
+    email = models.EmailField(blank=True, null=True)
+    booking_date = models.DateField(auto_now_add=True,blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.name}'

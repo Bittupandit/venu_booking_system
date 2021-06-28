@@ -13,7 +13,9 @@
         <h5>Venu Name : {{venue.address}}</h5>
         <h5>Venu Name : {{venue.landmark}}</h5>
     </div>
+    
 </div>
+<a href="{% url 'booking-page' venue.id %}" class="btn btn-success btn-sm" style="margin-top: 5px;">Click Here For Booking</a>
 <div class="row mt-3">
     <a href="{% url 'home-page'%}" class="btn btn-secondary">Back</a>
 </div>
