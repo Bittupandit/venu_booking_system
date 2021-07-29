@@ -27,3 +27,9 @@ def booking_form(request,pk):
             return redirect('detail-page',venue.id)
     context = {'form':form}
     return render(request,'booking_form.html',context)
+
+
+def booking_list(request):
+    bookings = Booking.objects.all()
+    context = {"bookings":bookings}
+    return render(request,'booking_list.html',context)
